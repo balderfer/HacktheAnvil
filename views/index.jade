@@ -2,7 +2,32 @@ doctype html
 head
     meta(charset='UTF-8')
     title #{title}
-    link(rel="stylesheet", href="base.css")
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300' rel='stylesheet' type='text/css')
+    link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet")
+    link(rel="stylesheet", href="stylesheets/base.css")
+
 
 body
-    | Hello World!
+    .container
+        img.logo(src="images/logo.png", alt="")
+        h1 Hack the Anvil
+        h2 Purdue University – March 6-8, 2014
+
+        p.note Enter you email to get updates about applications!
+
+        <!-- Begin MailChimp Signup Form -->
+        #mc_embed_signup
+            form(action="//hacktheanvil.us9.list-manage.com/subscribe/post?u=9177c3240d114b11db1e44bd7&amp;id=2e993884cf" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate)
+                #mc_embed_signup_scroll
+                    .mc-field-group.email-input
+                        input.email(type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email")
+                        input.subscribe(type="submit" value="✓" name="subscribe" id="mc-embedded-subscribe" class="button")
+                        //- i.fa.fa-check.fa-2x
+                    #mce-responses.clear
+                        .response#mce-error-response(style="display:none")
+                        .response#mce-success-response(style="display:none")
+                    div(style="position: absolute; left: -5000px;")
+                        input(type="text" name="b_9177c3240d114b11db1e44bd7_2e993884cf" tabindex="-1" value="")
+
+        p#sponsorLink
+            a(href="./HacktheAnvilSpring2015.pdf") Interested in Sponsoring?
