@@ -47,6 +47,11 @@ table {
     border-spacing: 0;
 }
 
+body {
+    @media (max-width: 600px) {
+        font-size: 12px;
+    }
+}
 
 .container {
     width: 32em;
@@ -55,9 +60,19 @@ table {
     text-align: center;
     margin-top: 3em;
 
+    @media (max-width: 600px) {
+        margin-top: 0;
+        width: 64em;
+        max-width: 90%;
+    }
+
     .logo {
         width: 16em;
         margin: 0 auto;
+
+        @media (max-width: 600px) { 
+            width: 80%;
+        }
     }
 
     h1 {
@@ -85,6 +100,9 @@ table {
 
     form {
         margin-top: 1em;
+        @media (max-width: 600px) {
+            width: 100%;
+        }
 
         .email-input {
             position: relative;
@@ -92,6 +110,11 @@ table {
             margin: 0 auto;
             box-shadow: 2px 2px 0.25em #cccccc;
             border-radius: 8px;
+
+            @media (max-width: 600px) {
+                width: 100%;
+                box-shadow: 2px 2px 1em #cccccc;
+            }
 
             input {
                 margin: 0;
@@ -110,6 +133,7 @@ table {
                 border: none;
                 border-radius: 0 8px 8px 0;
                 background-color: #F1C40F;
+                -webkit-appearance: none;
 
                 &:hover {
                     background-color: #F39C12;
