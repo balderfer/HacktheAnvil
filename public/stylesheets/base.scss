@@ -53,6 +53,17 @@ body {
     }
 }
 
+// Variables
+$break-xs: 480px;
+$break-sm: 768px;
+$break-md: 992px;
+
+$blue: #2c3e50;
+$pink: #ff6666;
+$white: #dadfe1;
+$yellow: #f5ae42;
+$gray: #444444;
+
 .bg-dark {
     fill: #333;
     background-color: #333;
@@ -76,12 +87,19 @@ body {
     .content-left {
         width: 50%;
     }
+
+    .container {
+        width: 100%;
+        padding: 0 2em;
+        max-width: 32em;
+        box-sizing: border-box;
+    }
 }
 
 .divider-image {
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 60vh;
     background-image: url('/images/divider-bg.jpg');
     background-size: auto 100%;
     @media screen and (min-width: 768px) {
@@ -111,4 +129,5 @@ body {
         fill: white;
         -webkit-filter: drop-shadow( -5px -5px 5px #000 );
                 filter: drop-shadow( -5px -5px 5px #000 );
-    }}
+    }
+}
