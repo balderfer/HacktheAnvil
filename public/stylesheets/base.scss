@@ -1,10 +1,12 @@
+@import "bourbon/bourbon";
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, h3, h4, h5, h6, p, blockquote, button, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -20,7 +22,7 @@ time, mark, audio, video {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -48,9 +50,7 @@ table {
 }
 
 body {
-    @media (max-width: 600px) {
-        font-size: 12px;
-    }
+    height: auto;
 }
 
 // Variables
@@ -60,39 +60,154 @@ $break-md: 992px;
 
 $blue: #2c3e50;
 $pink: #ff6666;
-$white: #dadfe1;
+$white: #ffffff;
 $yellow: #f5ae42;
 $gray: #444444;
 
-.bg-dark {
-    fill: #333;
-    background-color: #333;
-}
-.bg-yellow {
-    fill: #F5AE42;
-    background-color: #F5AE42;
+
+.bg-blue {
+    fill: $blue;
+    background-color: $blue;
 }
 .bg-pink {
-    fill: #FF6666;
-    background-color: #FF6666;
+    fill: $pink;
+    background-color: $pink;
+}
+.bg-white {
+    fill: $white;
+    background-color: $white;
+}
+.bg-yellow {
+    fill: $yellow;
+    background-color: $yellow;
+}
+.bg-gray {
+    fill: $gray;
+    background-color: $gray;
+    color: $white;
+}
+
+
+.t-blue {
+    color: $blue;
+} 
+.t-pink {
+    color: $pink;
+} 
+.t-white {
+    color: $white;
+} 
+.t-yellow {
+    color: $yellow;
+} 
+.t-gray {
+    color: $gray;
+} 
+
+.body-wrapper {
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 0 2em;
+    max-width: 48em;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .panel {
     position: relative;
     width: 100%;
-    height: 100vh;
-    min-height: 32em;
-    color: #333;
-
-    .content-left {
-        width: 50%;
+    height: auto;
+    
+    &.cover {
+        height: 100vh;
+        min-height: 32em;
     }
 
-    .container {
+    .hero {
+        position: relative;
         width: 100%;
-        padding: 0 2em;
+        margin: 0 auto;
         max-width: 32em;
-        box-sizing: border-box;
+        top: 50%;
+        transform: translate3d(0, -50%, 0);
+
+        h1 {
+            font-size: 5em;
+            font-weight: 300;
+            text-align: center;
+            line-height: 1em;
+        }
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1em;
+            line-height: 1em;
+        }
+        p {
+            text-align: center;
+            font-size: 1.4em;
+            margin-bottom: 1.4em;
+        }
+        .btn {
+            width: 8em;
+        }
+    }
+
+    .content {
+        padding: 4em 0;
+
+        &.left {
+            margin-left: 0;
+            margin-right: auto;
+
+            @media screen and (min-width: $break-xs) {
+                width: 60%;
+            }
+        }
+        &.right {
+            margin-left: auto;
+            margin-right: 0;
+
+            @media screen and (min-width: $break-xs) {
+                width: 60%;
+            }
+        }
+        &.center {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            line-height: 2em;
+        }
+        p {
+            font-size: 1.2em;
+        }
+    }
+}
+
+.footer-padding {
+    width: 100%;
+    height: 6em;
+}
+.footer {
+    position: absolute;
+    width: 100%;
+    height: 6em;
+    bottom: 0;
+
+    p {
+        font-weight: 300;
+        text-align: center;
+        line-height: 3em;
     }
 }
 
@@ -129,5 +244,55 @@ $gray: #444444;
         fill: white;
         -webkit-filter: drop-shadow( -5px -5px 5px #000 );
                 filter: drop-shadow( -5px -5px 5px #000 );
+    }
+}
+
+
+
+.button-row {
+    width: 100%;
+    text-align: center;
+
+    .social-button {
+        font-size: 1.4em;
+        margin-left: 1.2em;
+        color: tint($gray, 50%);
+        transition: all 0.25s;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:hover {
+            cursor: pointer;
+            color: $gray;
+        }
+    }
+}
+
+.btn {
+    padding: 0.4em 0.6em;
+    font-size: 1.2em;
+    border: none;
+    outline: none;
+    font-weight: 300;
+    text-align: center;
+    transition: all 0.25s;
+
+    &-pink {
+        background-color: $pink;
+        color: white;
+        &:hover {
+            background-color: shade($pink, 10%);
+            cursor: pointer; 
+        }
+    }
+    &-gray {
+        background-color: $gray;
+        color: white;
+        &:hover {
+            background-color: shade($gray, 10%);
+            cursor: pointer; 
+        }
     }
 }
