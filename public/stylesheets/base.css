@@ -58,9 +58,12 @@ table {
   width: 100%;
   height: 80vh;
   background-image: url('/images/divider-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; }
+  background-size: auto 100%;
+  background-position: center; }
+  @media screen and (min-width: 768px) {
+    .divider-image {
+      background-size: cover;
+      background-attachment: fixed; } }
   .divider-image .triangles {
     position: absolute;
     top: 0;
