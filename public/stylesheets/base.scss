@@ -53,6 +53,10 @@ body {
     }
 }
 
+$break-xs: 480px;
+$break-sm: 768px;
+$break-md: 992px;
+
 .bg-dark {
     fill: #333;
     background-color: #333;
@@ -76,7 +80,7 @@ body {
 .divider-image {
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 60vh;
     background-image: url('/images/divider-bg.jpg');
     background-size: auto 100%;
     @media screen and (min-width: 768px) {

@@ -7,7 +7,6 @@ head
     link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet")
     link(rel="stylesheet", href="stylesheets/base.css")
 
-
 body
     .body-wrapper
         .panel
@@ -17,13 +16,11 @@ body
                 defs
                     filter(id="shadow")
                         feGaussianBlur(in="SourceGraphic" stdDeviation="50")
-                        //- feOffset(dx="20" dy="20" result="offsetblur")
                 path(class="shadow shadow-top" filter="url(#shadow)" d="M-50,-100 L1010,-100 L1010,125 L960,25 L0,125 L-50,225 L-50,-50")
                 path(d="M0,0 L960,0 L0,100 L0,0")
                 defs
                     filter(id="shadow")
                         feGaussianBlur(in="SourceGraphic" stdDeviation="50")
-                        //- feOffset(dx="20" dy="20" result="offsetblur")
                 path(class="shadow shadow-top" filter="url(#shadow)" d="M-50,700 L1010,700 L1010,475 L960,575 L0,475 L-50,375 L-50,700")
                 path.bg-pink(d="M0,500 L960,600 L960,601 L0,601 L0,500")
         .panel.bg-pink
@@ -33,13 +30,11 @@ body
                 defs
                     filter(id="shadow")
                         feGaussianBlur(in="SourceGraphic" stdDeviation="50")
-                        //- feOffset(dx="20" dy="20" result="offsetblur")
                 path(class="shadow shadow-top" filter="url(#shadow)" d="M-50,-100 L1010,-100 L1010,225 L960,125 L0,25 L-50,125 L-50,-50")
                 path.bg-pink(d="M0,0 L960,0 L960,100 L0,0")
                 defs
                     filter(id="shadow")
                         feGaussianBlur(in="SourceGraphic" stdDeviation="50")
-                        //- feOffset(dx="20" dy="20" result="offsetblur")
                 path(class="shadow shadow-top" filter="url(#shadow)" d="M-50,700 L1010,700 L1010,375 L960,475 L0,575 L-50,475 L-50,700")
                 path(class="bg-dark" d="M0,600 L960,500 L960,601 L0,601 L0,600")
         .panel.bg-dark
