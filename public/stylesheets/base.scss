@@ -53,9 +53,16 @@ body {
     }
 }
 
+// Variables
 $break-xs: 480px;
 $break-sm: 768px;
 $break-md: 992px;
+
+$blue: #2c3e50;
+$pink: #ff6666;
+$white: #dadfe1;
+$yellow: #f5ae42;
+$gray: #444444;
 
 .bg-dark {
     fill: #333;
@@ -75,6 +82,14 @@ $break-md: 992px;
     width: 100%;
     height: 100vh;
     min-height: 32em;
+
+    .container {
+        width: 100%;
+        padding: 0 2em;
+        max-width: 32em;
+        box-sizing: border-box;
+    }
+
 }
 
 .divider-image {
