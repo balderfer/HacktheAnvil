@@ -9,26 +9,38 @@ head
 
 
 body
-    .container
-        img.logo(src="images/logo.png", alt="")
-        h1 Hack the Anvil
-        h2 Purdue University – March 6-8, 2014
-
-        p.note Enter your email to get updates about applications!
-
-        <!-- Begin MailChimp Signup Form -->
-        #mc_embed_signup
-            form(action="//hacktheanvil.us9.list-manage.com/subscribe/post?u=9177c3240d114b11db1e44bd7&amp;id=2e993884cf" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate)
-                #mc_embed_signup_scroll
-                    .mc-field-group.email-input
-                        input.email(type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email")
-                        input.subscribe(type="submit" value="✓" name="subscribe" id="mc-embedded-subscribe" class="button")
-                        //- i.fa.fa-check.fa-2x
-                    #mce-responses.clear
-                        .response#mce-error-response(style="display:none")
-                        .response#mce-success-response(style="display:none")
-                    div(style="position: absolute; left: -5000px;")
-                        input(type="text" name="b_9177c3240d114b11db1e44bd7_2e993884cf" tabindex="-1" value="")
-
-        p#sponsorLink
-            a(href="./HacktheAnvilSpring2015.pdf") Interested in Sponsoring?
+    .body-wrapper
+        .panel
+            p hacktheanvil
+        .divider-image
+            svg.triangles(viewBox="0 0 960 600" preserveAspectRatio="none")
+                defs
+                    filter(id="shadow")
+                        feGaussianBlur(in="SourceGraphic" stdDeviation="50")
+                        //- feOffset(dx="20" dy="20" result="offsetblur")
+                path(class="shadow shadow-top" filter="url(#shadow)" d="M-50,-100 L1010,-100 L1010,125 L960,25 L0,125 L-50,225 L-50,-50")
+                path(d="M0,0 L960,0 L0,100 L0,0")
+                defs
+                    filter(id="shadow")
+                        feGaussianBlur(in="SourceGraphic" stdDeviation="50")
+                        //- feOffset(dx="20" dy="20" result="offsetblur")
+                path(class="shadow shadow-top" filter="url(#shadow)" d="M-50,700 L1010,700 L1010,475 L960,575 L0,475 L-50,375 L-50,700")
+                path.bg-pink(d="M0,500 L960,600 L960,601 L0,601 L0,500")
+        .panel.bg-pink
+            p hacktheanvil
+        .divider-image
+            svg.triangles(viewBox="0 0 960 600" preserveAspectRatio="none")
+                defs
+                    filter(id="shadow")
+                        feGaussianBlur(in="SourceGraphic" stdDeviation="50")
+                        //- feOffset(dx="20" dy="20" result="offsetblur")
+                path(class="shadow shadow-top" filter="url(#shadow)" d="M-50,-100 L1010,-100 L1010,225 L960,125 L0,25 L-50,125 L-50,-50")
+                path.bg-pink(d="M0,0 L960,0 L960,100 L0,0")
+                defs
+                    filter(id="shadow")
+                        feGaussianBlur(in="SourceGraphic" stdDeviation="50")
+                        //- feOffset(dx="20" dy="20" result="offsetblur")
+                path(class="shadow shadow-top" filter="url(#shadow)" d="M-50,700 L1010,700 L1010,375 L960,475 L0,575 L-50,475 L-50,700")
+                path(class="bg-dark" d="M0,600 L960,500 L960,601 L0,601 L0,600")
+        .panel.bg-dark
+            p misson

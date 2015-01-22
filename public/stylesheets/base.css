@@ -35,76 +35,47 @@ table {
   body {
     font-size: 12px; } }
 
-.container {
-  width: 32em;
-  max-width: 90%;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 3em; }
-  @media (max-width: 600px) {
-    .container {
-      margin-top: 0;
-      width: 64em;
-      max-width: 90%; } }
-  .container .logo {
-    width: 16em;
-    margin: 0 auto; }
-    @media (max-width: 600px) {
-      .container .logo {
-        width: 80%; } }
-  .container h1 {
-    font-weight: 300;
-    font-size: 2.4em;
-    color: #777777;
-    margin-bottom: 0.25em; }
-  .container h2 {
-    font-weight: 700;
-    font-style: italic; }
-  .container p {
-    margin-top: 2em; }
-    .container p.note {
-      font-size: 1em; }
-  .container a {
-    text-decoration: none;
-    color: #F1C40F; }
-  .container form {
-    margin-top: 1em; }
-    @media (max-width: 600px) {
-      .container form {
-        width: 100%; } }
-    .container form .email-input {
-      position: relative;
-      width: 320px;
-      margin: 0 auto;
-      box-shadow: 2px 2px 0.25em #cccccc;
-      border-radius: 8px; }
-      @media (max-width: 600px) {
-        .container form .email-input {
-          width: 100%;
-          box-shadow: 2px 2px 1em #cccccc; } }
-      .container form .email-input input {
-        margin: 0;
-        box-sizing: border-box;
-        font-size: 1.2em;
-        padding: 0.5em;
-        font-family: "Open Sans", sans-serif; }
-      .container form .email-input .email {
-        width: 80%;
-        border: none;
-        border-radius: 8px 0 0 8px; }
-      .container form .email-input .subscribe {
-        width: 20%;
-        border: none;
-        border-radius: 0 8px 8px 0;
-        background-color: #F1C40F;
-        -webkit-appearance: none; }
-        .container form .email-input .subscribe:hover {
-          background-color: #F39C12;
-          cursor: pointer; }
-      .container form .email-input .fa-check {
-        position: absolute;
-        left: 90%;
-        top: 50%;
-        -webkit-transform: translate3d(-50%, -50%, 0);
-                transform: translate3d(-50%, -50%, 0);
-        color: #FFFFFF; }
+.bg-dark {
+  fill: #333;
+  background-color: #333; }
+
+.bg-yellow {
+  fill: #F5AE42;
+  background-color: #F5AE42; }
+
+.bg-pink {
+  fill: #FF6666;
+  background-color: #FF6666; }
+
+.panel {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 32em; }
+
+.divider-image {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background-image: url('/images/divider-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; }
+  .divider-image .triangles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: white; }
+    .divider-image .triangles .shadow {
+      fill: black;
+      opacity: 0.8; }
+  .divider-image .bottom-triangle {
+    position: absolute;
+    bottom: 0;
+    right: -1%;
+    width: 102%;
+    fill: white;
+    -webkit-filter: drop-shadow(-5px -5px 5px #000);
+    filter: drop-shadow(-5px -5px 5px #000); }

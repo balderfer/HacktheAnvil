@@ -53,100 +53,54 @@ body {
     }
 }
 
-.container {
-    width: 32em;
-    max-width: 90%;
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 3em;
-
-    @media (max-width: 600px) {
-        margin-top: 0;
-        width: 64em;
-        max-width: 90%;
-    }
-
-    .logo {
-        width: 16em;
-        margin: 0 auto;
-
-        @media (max-width: 600px) { 
-            width: 80%;
-        }
-    }
-
-    h1 {
-        font-weight: 300;
-        font-size: 2.4em;
-        color: #777777;
-        margin-bottom: 0.25em; 
-    }
-    h2 {
-        font-weight: 700;
-        font-style: italic;
-    }
-
-    p {
-        margin-top: 2em;
-
-        &.note {
-            font-size: 1em;
-        }
-    }
-    a {
-        text-decoration: none;
-        color: #F1C40F;
-    }
-
-    form {
-        margin-top: 1em;
-        @media (max-width: 600px) {
-            width: 100%;
-        }
-
-        .email-input {
-            position: relative;
-            width: 320px;
-            margin: 0 auto;
-            box-shadow: 2px 2px 0.25em #cccccc;
-            border-radius: 8px;
-
-            @media (max-width: 600px) {
-                width: 100%;
-                box-shadow: 2px 2px 1em #cccccc;
-            }
-
-            input {
-                margin: 0;
-                box-sizing: border-box;
-                font-size: 1.2em;
-                padding: 0.5em;
-                font-family: "Open Sans", sans-serif;
-            }
-            .email {
-                width: 80%;
-                border: none;
-                border-radius: 8px 0 0 8px;
-            }
-            .subscribe {
-                width: 20%;
-                border: none;
-                border-radius: 0 8px 8px 0;
-                background-color: #F1C40F;
-                -webkit-appearance: none;
-
-                &:hover {
-                    background-color: #F39C12;
-                    cursor: pointer;
-                }
-            }
-            .fa-check {
-                position: absolute;
-                left: 90%;
-                top: 50%;
-                transform: translate3d(-50%, -50%, 0);
-                color: #FFFFFF;
-            }
-        }
-    }
+.bg-dark {
+    fill: #333;
+    background-color: #333;
 }
+.bg-yellow {
+    fill: #F5AE42;
+    background-color: #F5AE42;
+}
+.bg-pink {
+    fill: #FF6666;
+    background-color: #FF6666;
+}
+
+.panel {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    min-height: 32em;
+}
+
+.divider-image {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background-image: url('/images/divider-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    .triangles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        fill: white;
+
+        .shadow {
+            fill: black;
+            opacity: 0.8;
+        }
+    }
+    .bottom-triangle {
+        position: absolute;
+        bottom: 0;
+        right: -1%;
+        width: 102%;
+        fill: white;
+        -webkit-filter: drop-shadow( -5px -5px 5px #000 );
+                filter: drop-shadow( -5px -5px 5px #000 );
+    }}
