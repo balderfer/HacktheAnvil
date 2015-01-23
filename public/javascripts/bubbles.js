@@ -4,6 +4,8 @@ var color = 1;
 var bubbleArray = [];
 var cursorX = -1000;
 var cursorY = -1000;
+var pagePosition = 0;
+var multiplier = 1;
 
 $(document).ready(function() {
 	b = document.getElementById('bubbles');
@@ -24,6 +26,19 @@ $(document).ready(function() {
 		cursorX = e.pageX;
 		cursorY = e.pageY;
 	}
+
+	document.onclick = function(e) {
+		for (var i = 0; i < bubbleArray.length; i++) {
+			if (isNearbyBubble(i, cursorX, cursorY)) {
+				bubbleArray[i].popped = true;
+			}
+		}
+	}
+
+	// $(window).scroll(function(event) {
+	// 	pagePosition = $('body').scrollTop();
+	// 	console.log(pagePosition);
+	// });
 });
 
 var isNearbyBubble = function(i, x, y) {
@@ -71,21 +86,26 @@ var drawCircle = function(c, ctx, x, y, r, c) {
 }
 
 var initBubbles = function() {
-	for (var i = 0; i < 35; i++) {
-		if (i < 13) {
+	var numberOfButtons = 35;
+	for (var i = 0; i < numberOfButtons; i++) {
+		if (i < numberOfButtons * 0.33) {
 			var x = (Math.random() * (b.width / 5)) + (0 * b.width / 5);
-			var r = Math.random() * 60;
+			var r = Math.random() * 50 + 10;
 		}
-		else if (i < 24) {
+		else if (i < numberOfButtons * 0.66) {
 			var x = (Math.random() * (3 * b.width / 5)) + (1 * b.width / 5);			
-			var r = Math.random() * 20;
+			var r = Math.random() * 50 + 10;
 		}
 		else {
 			var x = (Math.random() * (b.width / 5)) + (4 * b.width / 5);
-			var r = Math.random() * 60;
+			var r = Math.random() * 50 + 10;
 		}
 		var y = Math.random() * $(window).height();
 		var c = getColor();
+
+		var opacity = (Math.random() * 0.2) + 0.1;
+
+		bctx.globalAlpha = opacity;
 
 		drawCircle(b, bctx, x, y, r, c);
 		bubbleArray.push({
@@ -94,8 +114,9 @@ var initBubbles = function() {
 			r: r,
 			c: c,
 			hover: false,
-			opacity: 1.0,
-			dr: 0
+			opacity: opacity,
+			dr: 0,
+			popped: false
 		});
 	}
 
@@ -105,68 +126,84 @@ var initBubbles = function() {
 var updateBubbles = function() {
 	// alert('updateBubbles');
 	bctx.clearRect(0, 0, b.width, b.height);
-	for (var i = 0; i < 35; i++) {
+	for (var i = 0; i < bubbleArray.length; i++) {
 		if (i % 5 == 0) {
-			bubbleArray[i].y = bubbleArray[i].y - 0.9;
+			bubbleArray[i].y = bubbleArray[i].y - (0.9 * multiplier);
 		}
 		if (i % 2 == 0) {
-			bubbleArray[i].y = bubbleArray[i].y - 0.3;
+			bubbleArray[i].y = bubbleArray[i].y - (0.3 * multiplier);
 		}
 		else {
-			bubbleArray[i].y = bubbleArray[i].y - 0.9;
+			bubbleArray[i].y = bubbleArray[i].y - (0.9 * multiplier);
 		}
-		if (bubbleArray[i].y < -65) {
+		if (bubbleArray[i].y < -65 && $(window).scrollTop() < 10 && Math.random() < 0.001) {
+			multiplier = 1;
 			bubbleArray[i].y = $(window).height() + 65;
+			bubbleArray[i].dr = 0;
+			bubbleArray[i].opacity = (Math.random() * 0.2) + 0.1; 
 		}
 
-		// Hover effects
-		if (isNearbyBubble(i, cursorX, cursorY)) {
-			bubbleArray[i].hover = true;
-
-			// Step up dr
-			if (bubbleArray[i].dr < bubbleArray[i].r / 2) {
-				bubbleArray[i].dr += 5;
+		if (bubbleArray[i].popped) {
+			if (bubbleArray[i].dr < 1000) {
+				bubbleArray[i].dr += 60;
 			}
-			else {
-				bubbleArray[i].dr = bubbleArray[i].r / 2;
+			if (bubbleArray[i].opacity > 0) {
+				bubbleArray[i].opacity -= 0.02;
+				if (bubbleArray[i].opacity < 0) {
+					bubbleArray[i].opacity = 0;
+					bubbleArray[i].popped = false;
+					bubbleArray[i].y = $(window).height() + 65;
+					bubbleArray[i].dr = 0;
+					bubbleArray[i].opacity = (Math.random() * 0.2) + 0.1; 
+				}
 			}
-
-			// Step down opacity
-			if (bubbleArray[i].opacity > 0.5) {
-				bubbleArray[i].opacity -= 0.09;
-			}
-			else {
-				bubbleArray[i].opacity = 0.5;
-			}	
 		}
 		else {
-			bubbleArray[i].hover = false;
-			
-			// Step down dr
-			if (bubbleArray[i].dr > 0) {
-				bubbleArray[i].dr -= 5;
-			}
-			else {
-				bubbleArray[i].dr = 0;
-			}
+			// Hover effects
+			if (isNearbyBubble(i, cursorX, cursorY)) {
+				bubbleArray[i].hover = true;
 
-			// Step up opacity
-			if (bubbleArray[i].opacity < 1) {
-				bubbleArray[i].opacity += 0.09;
+				// Step up dr
+				if (bubbleArray[i].dr < bubbleArray[i].r / 2) {
+					bubbleArray[i].dr += 5;
+				}
+				else {
+					bubbleArray[i].dr = bubbleArray[i].r / 2;
+				}
+
+				// Step down opacity
+				// if (bubbleArray[i].opacity > 0.5) {
+				// 	bubbleArray[i].opacity -= 0.09;
+				// }
+				// else {
+				// 	bubbleArray[i].opacity = 0.5;
+				// }	
 			}
 			else {
-				bubbleArray[i].opacity = 1;
-			}			
+				bubbleArray[i].hover = false;
+				
+				// Step down dr
+				if (bubbleArray[i].dr > 0) {
+					bubbleArray[i].dr -= 5;
+				}
+				else {
+					bubbleArray[i].dr = 0;
+				}
+
+				// Step up opacity
+				// if (bubbleArray[i].opacity < 1) {
+				// 	bubbleArray[i].opacity += 0.09;
+				// }
+				// else {
+				// 	bubbleArray[i].opacity = 1;
+				// }			
+			}
 		}
-		// for (var i = 0; i < bIndexes.length; i++) {
-		// 	if (!bubbleArray[bIndexes[i]].doubled) {
-		// 		bubbleArray[bIndexes[i]].dr += 0.1;
-		// 		bubbleArray[bIndexes[i]].hover = true;
-		// 	}
-		// }
 
 		// Fade if necessary
 		bctx.globalAlpha = bubbleArray[i].opacity;
+
+		// var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
 		drawCircle(b, bctx, bubbleArray[i].x, bubbleArray[i].y, bubbleArray[i].r + bubbleArray[i].dr, bubbleArray[i].c);
 	}
