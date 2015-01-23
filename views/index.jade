@@ -10,7 +10,7 @@ head
     script(src="javascripts/bubbles.js")
 
 body
-    .body-wrapper
+    .body-wrapper#bubbleWrapper
         .bubbles
             canvas#bubbles
 
@@ -100,3 +100,5 @@ body
                     i.social-button.fa.fa-envelope
                     i.social-button.fa.fa-facebook
                     i.social-button.fa.fa-twitter
+    script.
+        initBubbles();
