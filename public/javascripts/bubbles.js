@@ -6,6 +6,7 @@ var maxBubbleR = 60;
 var nBubbles = 35;
 
 var clickEvent = false;
+var lastTime = Date.now();
 var bubbleArray = [];
 var cursorX = -1000;
 var cursorY = -1000;
@@ -104,11 +105,15 @@ var initBubbles = function() {
 	}
 
 	var update = window.setInterval(function() {
-		updateBubbles();
+		var currentTime = Date.now();
+		if (currentTime - lastTime < 100) {
+			updateBubbles(currentTime - lastTime);
+		} 
+		lastTime = currentTime;
 	}, 30);
 }
 
-var updateBubbles = function() {
+var updateBubbles = function(delta) {
 	bctx.clearRect(0, 0, b.width, b.height);
 
 	// Update for each bubble
@@ -120,25 +125,25 @@ var updateBubbles = function() {
 		}
 
 		// If scrolled beyond 50px then increase speed multiplier
-		if (window.scrollY > 50) {
-			multiplier *= 1.005;
-			if (multiplier > 1000) {
-				multiplier = 1;
-			}
-		}
-		else {
-			multiplier = 1;
-		}
+		// if (window.scrollY > 50) {
+		// 	multiplier *= 1.005;
+		// 	if (multiplier > 1000) {
+		// 		multiplier = 1;
+		// 	}
+		// }
+		// else {
+		// 	multiplier = 1;
+		// }
 
 		// Set various speeds for bubbles
 		if (i % 5 == 0) {
-			bubbleArray[i].y = bubbleArray[i].y - (1.5 * multiplier);
+			bubbleArray[i].y = bubbleArray[i].y - (1.5 / 30 * delta * multiplier);
 		}
 		else if (i % 2 == 0) {
-			bubbleArray[i].y = bubbleArray[i].y - (0.9 * multiplier);
+			bubbleArray[i].y = bubbleArray[i].y - (0.9 / 30 * delta * multiplier);
 		}
 		else {
-			bubbleArray[i].y = bubbleArray[i].y - (0.3 * multiplier);
+			bubbleArray[i].y = bubbleArray[i].y - (0.3 / 30 * delta * multiplier);
 		}
 
 		// If bubble is off the top of the screen, then randomly respawn bubbles
