@@ -108,6 +108,9 @@ $gray: #444444;
     position: relative;
 
     .bubbles {
+        @media screen and (max-width: $break-xs) {
+            display: none;
+        }
         position: absolute;
         width: 100%;
         height: 100%;

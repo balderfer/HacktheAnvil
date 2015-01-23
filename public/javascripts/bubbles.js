@@ -2,8 +2,8 @@ var b;
 var bctx;
 var color = 1;
 var bubbleArray = [];
-var cursorX = 0;
-var cursorY = 0;
+var cursorX = -1000;
+var cursorY = -1000;
 
 $(document).ready(function() {
 	b = document.getElementById('bubbles');
