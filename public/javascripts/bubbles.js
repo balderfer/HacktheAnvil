@@ -2,6 +2,8 @@ var b;
 var bctx;
 var color = 1;
 var bubbleArray = [];
+var cursorX = 0;
+var cursorY = 0;
 
 $(document).ready(function() {
 	b = document.getElementById('bubbles');
@@ -19,33 +21,17 @@ $(document).ready(function() {
 	});
 
 	document.onmousemove = function(e) {
-		var bIndexes = getNearbyBubbles(e.pageX, e.pageY);
-		for (var i = 0; i < bubbleArray.length; i++) {
-			if (bubbleArray[i].doubled) {
-				bubbleArray[i].r *= (1 / 1.5);
-				bubbleArray[i].doubled = false;
-				bubbleArray[i].faded = false;
-			}
-		}
-		for (var i = 0; i < bIndexes.length; i++) {
-			if (!bubbleArray[bIndexes[i]].doubled) {
-				bubbleArray[bIndexes[i]].r *= 1.5;
-				bubbleArray[bIndexes[i]].doubled = true;
-				bubbleArray[bIndexes[i]].faded = true;
-			}
-		}
+		cursorX = e.pageX;
+		cursorY = e.pageY;
 	}
 });
 
-var getNearbyBubbles = function(x, y) {
-	var nearbyBubbleIndexes = [];
-	for (var i = 0; i < bubbleArray.length; i++) {
-		var distance = calculateDistance(x, y, bubbleArray[i].x, bubbleArray[i].y);
-		if (distance < bubbleArray[i].r) {
-			nearbyBubbleIndexes.push(i);
-		}
+var isNearbyBubble = function(i, x, y) {
+	var distance = calculateDistance(x, y, bubbleArray[i].x, bubbleArray[i].y);
+	if (distance < bubbleArray[i].r) {
+		return true;
 	}
-	return nearbyBubbleIndexes;
+	return false;
 }
 
 var calculateDistance = function(x1, y1, x2, y2) {
@@ -107,8 +93,9 @@ var initBubbles = function() {
 			y: y,
 			r: r,
 			c: c,
-			doubled: false,
-			faded: false
+			hover: false,
+			opacity: 1.0,
+			dr: 0
 		});
 	}
 
@@ -132,14 +119,55 @@ var updateBubbles = function() {
 			bubbleArray[i].y = $(window).height() + 65;
 		}
 
-		// Fade if necessary
-		if (bubbleArray[i].faded) {
-			bctx.globalAlpha = 0.5;
+		// Hover effects
+		if (isNearbyBubble(i, cursorX, cursorY)) {
+			bubbleArray[i].hover = true;
+
+			// Step up dr
+			if (bubbleArray[i].dr < bubbleArray[i].r / 2) {
+				bubbleArray[i].dr += 5;
+			}
+			else {
+				bubbleArray[i].dr = bubbleArray[i].r / 2;
+			}
+
+			// Step down opacity
+			if (bubbleArray[i].opacity > 0.5) {
+				bubbleArray[i].opacity -= 0.09;
+			}
+			else {
+				bubbleArray[i].opacity = 0.5;
+			}	
 		}
 		else {
-			bctx.globalAlpha = 1;
-		}
+			bubbleArray[i].hover = false;
+			
+			// Step down dr
+			if (bubbleArray[i].dr > 0) {
+				bubbleArray[i].dr -= 5;
+			}
+			else {
+				bubbleArray[i].dr = 0;
+			}
 
-		drawCircle(b, bctx, bubbleArray[i].x, bubbleArray[i].y, bubbleArray[i].r, bubbleArray[i].c);
+			// Step up opacity
+			if (bubbleArray[i].opacity < 1) {
+				bubbleArray[i].opacity += 0.09;
+			}
+			else {
+				bubbleArray[i].opacity = 1;
+			}			
+		}
+		// for (var i = 0; i < bIndexes.length; i++) {
+		// 	if (!bubbleArray[bIndexes[i]].doubled) {
+		// 		bubbleArray[bIndexes[i]].dr += 0.1;
+		// 		bubbleArray[bIndexes[i]].hover = true;
+		// 	}
+		// }
+
+		// Fade if necessary
+		bctx.globalAlpha = bubbleArray[i].opacity;
+
+		drawCircle(b, bctx, bubbleArray[i].x, bubbleArray[i].y, bubbleArray[i].r + bubbleArray[i].dr, bubbleArray[i].c);
 	}
 }
