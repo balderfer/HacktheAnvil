@@ -110,7 +110,7 @@ var initBubbles = function() {
 			updateBubbles(currentTime - lastTime);
 		} 
 		lastTime = currentTime;
-	}, 30);
+	}, 60);
 }
 
 var updateBubbles = function(delta) {
@@ -137,13 +137,13 @@ var updateBubbles = function(delta) {
 
 		// Set various speeds for bubbles
 		if (i % 5 == 0) {
-			bubbleArray[i].y = bubbleArray[i].y - (1.5 / 30 * delta * multiplier);
+			bubbleArray[i].y = bubbleArray[i].y - (1.5 / 60 * delta * multiplier);
 		}
 		else if (i % 2 == 0) {
-			bubbleArray[i].y = bubbleArray[i].y - (0.9 / 30 * delta * multiplier);
+			bubbleArray[i].y = bubbleArray[i].y - (0.9 / 60 * delta * multiplier);
 		}
 		else {
-			bubbleArray[i].y = bubbleArray[i].y - (0.3 / 30 * delta * multiplier);
+			bubbleArray[i].y = bubbleArray[i].y - (0.3 / 60 * delta * multiplier);
 		}
 
 		// If bubble is off the top of the screen, then randomly respawn bubbles
