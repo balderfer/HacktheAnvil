@@ -65,13 +65,13 @@ var initBubbles = function() {
 	bctx = b.getContext('2d');
 
 	// Listeners
-	// document.onmousemove = function(e) {
-	// 	updateCursorLocation(e);
-	// }
+	document.onmousemove = function(e) {
+		updateCursorLocation(e);
+	}
 
-	// document.onclick = function(e) {
-	// 	clickEvent = true;
-	// }
+	document.onclick = function(e) {
+		clickEvent = true;
+	}
 
 	for (var i = 0; i < nBubbles; i++) {
 		if (i < nBubbles * 0.33) {
@@ -149,7 +149,7 @@ var updateBubbles = function(delta) {
 		}
 
 		// If bubble is off the top of the screen, then randomly respawn bubbles
-		if (bubbleArray[i].y < -65 && Math.random() < 0.001) {
+		if (bubbleArray[i].y < -65 && window.scrollY < 10 && Math.random() < 0.001) {
 			bubbleArray[i].y = wh + 10 + maxBubbleR;
 			bubbleArray[i].dr = 0;
 			bubbleArray[i].opacity = (Math.random() * 0.2) + 0.1; 
