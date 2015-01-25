@@ -68,23 +68,43 @@ $gray: #444444;
 .bg-blue {
     fill: $blue;
     background-color: $blue;
+
+    .bg-blue {
+        background-color: white;
+    }
 }
 .bg-pink {
     fill: $pink;
     background-color: $pink;
+
+    .bg-pink {
+        background-color: white;
+    }
 }
 .bg-white {
     fill: $white;
     background-color: $white;
+
+    .bg-white {
+        background-color: gray;
+    }
 }
 .bg-yellow {
     fill: $yellow;
     background-color: $yellow;
+
+    .bg-yellow {
+        background-color: white;
+    }
 }
 .bg-gray {
     fill: $gray;
     background-color: $gray;
     color: $white;
+
+    .bg-gray {
+        background-color: white;
+    }
 }
 
 
@@ -102,12 +122,12 @@ $gray: #444444;
 } 
 .t-gray {
     color: $gray;
-} 
+}
 
 .body-wrapper {
     position: relative;
 
-    .bubbles {
+    > .bubbles {
         @media screen and (max-width: $break-xs) {
             display: none;
         }
@@ -124,10 +144,44 @@ $gray: #444444;
             width: 100%;
             height: 100%;
         }
+
+        .bubble {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 1000px;
+            &:nth-child(n) {
+                opacity: 0.7;
+            }
+            &:nth-child(2n) {
+                opacity: 0.5;
+            }
+            &:nth-child(3n) {
+                opacity: 0.3;
+            }
+
+            &-xs {
+                width: 2em;
+                height: 2em;
+            }
+            &-sm {
+                width: 4em;
+                height: 4em;
+            }
+            &-md {
+                width: 6em;
+                height: 6em;
+            }
+            &-lg {
+                width: 8em;
+                height: 8em;
+            }
+        }
     }
 }
 
 .container {
+    position: relative;
     width: 100%;
     height: 100%;
     padding: 0 2em;
@@ -211,6 +265,64 @@ $gray: #444444;
             font-size: 1.2em;
         }
     }
+
+    .bubbles-left {
+        position: absolute;
+        display: none;
+        @media screen and (min-width: $break-xs) {
+            display: inline-block;
+        }
+        width: 30%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+    .bubbles-right {
+        position: absolute;
+        display: none;
+        @media screen and (min-width: $break-xs) {
+            display: inline-block;
+        }
+        width: 30%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .spawn-bubbles {
+        overflow: visible;
+        z-index: 100;
+        .bubble {
+            position: absolute;
+            border-radius: 1000px;
+            &:nth-child(n) {
+                opacity: 0.7;
+            }
+            &:nth-child(2n) {
+                opacity: 0.5;
+            }
+            &:nth-child(3n) {
+                opacity: 0.3;
+            }
+
+            &-xs {
+                width: 2em;
+                height: 2em;
+            }
+            &-sm {
+                width: 4em;
+                height: 4em;
+            }
+            &-md {
+                width: 6em;
+                height: 6em;
+            }
+            &-lg {
+                width: 8em;
+                height: 8em;
+            }
+        }
+    }
 }
 
 .footer-padding {
@@ -241,6 +353,23 @@ $gray: #444444;
         background-attachment: fixed;
     }
     background-position: center;
+
+    .triangle-left-svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: url('/images/triangle-left.svg');
+        background-size: 100% 100%;
+    }
+    .triangle-blur {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
 
     .triangles {
         position: absolute;

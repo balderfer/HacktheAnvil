@@ -125,15 +125,15 @@ var updateBubbles = function(delta) {
 		}
 
 		// If scrolled beyond 50px then increase speed multiplier
-		// if (window.scrollY > 50) {
-		// 	multiplier *= 1.005;
-		// 	if (multiplier > 1000) {
-		// 		multiplier = 1;
-		// 	}
-		// }
-		// else {
-		// 	multiplier = 1;
-		// }
+		if (window.scrollY > 50) {
+			multiplier *= 1.0025;
+			if (multiplier > 1000) {
+				multiplier = 1;
+			}
+		}
+		else {
+			multiplier = 1;
+		}
 
 		// Set various speeds for bubbles
 		if (i % 5 == 0) {
