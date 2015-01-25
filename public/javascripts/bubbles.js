@@ -12,8 +12,6 @@ var cursorX = -1000;
 var cursorY = -1000;
 var pagePosition = 0;
 var multiplier = 1;
-var wh = window.innerHeight;
-var ww = window.innerWidth;
 
 var updateCursorLocation = function(e) {
 	cursorX = e.pageX;
@@ -86,7 +84,7 @@ var initBubbles = function() {
 			var x = getXWithinField(0.2, 0.8);
 			var r = generateRadius();
 		}
-		var y = Math.random() * wh;
+		var y = Math.random() * window.innerHeight;
 		var c = getColor();
 
 		var opacity = (Math.random() * 0.2) + 0.1;
@@ -149,8 +147,8 @@ var updateBubbles = function(delta) {
 		}
 
 		// If bubble is off the top of the screen, then randomly respawn bubbles
-		if (bubbleArray[i].y < -65 && window.scrollY < 10 && Math.random() < 0.001) {
-			bubbleArray[i].y = wh + 10 + maxBubbleR;
+		if (bubbleArray[i].y < -65 && window.scrollY <= 10 && Math.random() < 0.001) {
+			bubbleArray[i].y = window.innerHeight + 10 + maxBubbleR;
 			bubbleArray[i].dr = 0;
 			bubbleArray[i].opacity = (Math.random() * 0.2) + 0.1; 
 		}
