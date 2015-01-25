@@ -63,13 +63,13 @@ var initBubbles = function() {
 	bctx = b.getContext('2d');
 
 	// Listeners
-	document.onmousemove = function(e) {
-		updateCursorLocation(e);
-	}
+	// document.onmousemove = function(e) {
+	// 	updateCursorLocation(e);
+	// }
 
-	document.onclick = function(e) {
-		clickEvent = true;
-	}
+	// document.onclick = function(e) {
+	// 	clickEvent = true;
+	// }
 
 	for (var i = 0; i < nBubbles; i++) {
 		if (i < nBubbles * 0.33) {
@@ -110,7 +110,7 @@ var initBubbles = function() {
 			updateBubbles(currentTime - lastTime);
 		} 
 		lastTime = currentTime;
-	}, 60);
+	}, 30);
 }
 
 var updateBubbles = function(delta) {
@@ -137,13 +137,13 @@ var updateBubbles = function(delta) {
 
 		// Set various speeds for bubbles
 		if (i % 5 == 0) {
-			bubbleArray[i].y = bubbleArray[i].y - (1.5 / 60 * delta * multiplier);
+			bubbleArray[i].y = bubbleArray[i].y - (1.5 / 30 * delta * multiplier);
 		}
 		else if (i % 2 == 0) {
-			bubbleArray[i].y = bubbleArray[i].y - (0.9 / 60 * delta * multiplier);
+			bubbleArray[i].y = bubbleArray[i].y - (0.9 / 30 * delta * multiplier);
 		}
 		else {
-			bubbleArray[i].y = bubbleArray[i].y - (0.3 / 60 * delta * multiplier);
+			bubbleArray[i].y = bubbleArray[i].y - (0.3 / 30 * delta * multiplier);
 		}
 
 		// If bubble is off the top of the screen, then randomly respawn bubbles
