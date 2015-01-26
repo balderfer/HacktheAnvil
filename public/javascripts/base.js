@@ -88,7 +88,7 @@ var spawnBubbles = function() {
 			}
 
 			// Random right
-			if (bubble.dataset.align == 'right') {
+			if (spawn[i].dataset.align == 'right') {
 				bubble.style.right = (Math.random() * $(spawn[i]).width() / nBubbles) + (j * $(spawn[i]).width() / nBubbles) + 'px';
 			}
 			else {
