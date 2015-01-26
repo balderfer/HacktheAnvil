@@ -151,4 +151,6 @@ body
     script.
         spawnBubbles();
         initBubbles();
-        var s = skrollr.init();
+        if (window.innerWidth > 768) {
+            var s = skrollr.init();
+        }
