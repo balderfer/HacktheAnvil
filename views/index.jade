@@ -12,7 +12,11 @@ head
 
 body
     .body-wrapper#bubbleWrapper
-        .bubbles
+        .bubbles#bubbleContainer
+            script.
+                var bubbles = document.getElementById('bubbleContainer');
+                bubbles.setAttribute('data-0', 'top:1px;')
+                bubbles.setAttribute('data-' + window.innerHeight, 'top:-' + window.innerHeight + 'px;');
             canvas#bubbles
 
         .panel.cover
@@ -20,88 +24,98 @@ body
                 .hero
                     h1 Hack the Anvil
                     h2 Learn together. Create together.
-
                     p March 6-8 • Purdue University • 36 Hours
-                    
                     .button-row
                         button.btn.btn-pink Sign up
 
-        .divider-image#baseDividerImage
-            canvas.slants(data-align="left" data-top="white" data-bottom="yellow")
+        .divider-image#baseDividerImage.divider1
+            canvas.slants(data-align="left" data-top="white" data-bottom="white")
 
-            //- svg.triangles(viewBox="0 0 960 600" preserveAspectRatio="none")
-            //-     //- defs
-            //-     //-     filter(id="shadow")
-            //-     //-         feGaussianBlur(in="SourceGraphic" stdDeviation="50")
-            //-     path(class="shadow shadow-top" d="M-50,-100 L1010,-100 L1010,125 L960,25 L0,125 L-50,225 L-50,-50")
-            //-     path(d="M0,0 L960,0 L0,100 L0,0")
-            //-     //- defs
-            //-     //-     filter(id="shadow")
-            //-     //-         feGaussianBlur(in="SourceGraphic" stdDeviation="50")
-            //-     path(class="shadow shadow-top" d="M-50,700 L1010,700 L1010,475 L960,575 L0,475 L-50,375 L-50,700")
-            //-     path.bg-yellow(d="M0,500 L960,600 L960,601 L0,601 L0,500")
-        .panel.bg-yellow
+        .panel.bg-white
             .container
                 .spawn-bubbles.bubbles-left
                 .content.right
                     h1 OUR MISSION
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, #[span.t-white sed do eiusmod tempor incididunt] ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        .divider-image
-            canvas.slants(data-align="right" data-top="yellow" data-bottom="white")
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, #[span.t-yellow sed do eiusmod tempor incididunt] ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        
+        .divider-image.divider2
+            canvas.slants(data-align="right" data-top="white" data-bottom="white")
 
-            //- svg.triangles(viewBox="0 0 960 600" preserveAspectRatio="none")
-            //-     //- defs
-            //-     //-     filter(id="shadow")
-            //-     //-         feGaussianBlur(in="SourceGraphic" stdDeviation="50")
-            //-     path(class="shadow shadow-top" d="M-50,-100 L1010,-100 L1010,225 L960,125 L0,25 L-50,125 L-50,-50")
-            //-     path.bg-yellow(d="M0,0 L960,0 L960,100 L0,0")
-            //-     //- defs
-            //-     //-     filter(id="shadow")
-            //-     //-         feGaussianBlur(in="SourceGraphic" stdDeviation="50")
-            //-     path(class="shadow shadow-top" d="M-50,700 L1010,700 L1010,375 L960,475 L0,575 L-50,475 L-50,700")
-            //-     path(class="bg-white" d="M0,600 L960,500 L960,601 L0,601 L0,600")
         .panel.bg-white
             .container
                 .spawn-bubbles.bubbles-right
                 .content.left
                     h1 FAQ
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, #[span.t-yellow sed do eiusmod tempor incididunt] ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        .divider-image
-            canvas.slants(data-align="left" data-top="white" data-bottom="gray")
-            //- svg.triangles(viewBox="0 0 960 600" preserveAspectRatio="none")
-            //-     //- defs
-            //-     //-     filter(id="shadow")
-            //-     //-         feGaussianBlur(in="SourceGraphic" stdDeviation="50")
-            //-     path(class="shadow shadow-top" d="M-50,-100 L1010,-100 L1010,125 L960,25 L0,125 L-50,225 L-50,-50")
-            //-     path.bg-white(d="M0,0 L960,0 L0,100 L0,0")
-            //-     //- defs
-            //-     //-     filter(id="shadow")
-            //-     //-         feGaussianBlur(in="SourceGraphic" stdDeviation="50")
-            //-     path(class="shadow shadow-top" d="M-50,700 L1010,700 L1010,475 L960,575 L0,475 L-50,375 L-50,700")
-            //-     path.bg-gray(d="M0,500 L960,600 L960,601 L0,601 L0,500")
-        .panel.bg-gray
+                    h4 Question for the FAQ goes here?
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    h4 Question for the FAQ goes here?
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    h4 Question for the FAQ goes here?
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    h4 Question for the FAQ goes here?
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    h4 Question for the FAQ goes here?
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    h4 Question for the FAQ goes here?
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+       
+        .divider-image.divider3
+            canvas.slants(data-align="left" data-top="white" data-bottom="white")
+
+        .panel.bg-white
             .container
                 .spawn-bubbles.bubbles-left
-                .content.right
+                .content.right.schedule
                     h1 Schedule
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, #[span.t-pink sed do eiusmod tempor incididunt] ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        .divider-image
-            canvas.slants(data-align="right" data-top="gray" data-bottom="white")
-            //- svg.triangles(viewBox="0 0 960 600" preserveAspectRatio="none")
-            //-     //- defs
-            //-     //-     filter(id="shadow")
-            //-     //-         feGaussianBlur(in="SourceGraphic" stdDeviation="50")
-            //-     path(class="shadow shadow-top" d="M-50,-100 L1010,-100 L1010,225 L960,125 L0,25 L-50,125 L-50,-50")
-            //-     path.bg-gray(d="M0,0 L960,0 L960,100 L0,0")
-            //-     //- defs
-            //-     //-     filter(id="shadow")
-            //-     //-         feGaussianBlur(in="SourceGraphic" stdDeviation="50")
-            //-     path(class="shadow shadow-top" d="M-50,700 L1010,700 L1010,375 L960,475 L0,575 L-50,475 L-50,700")
-            //-     path(class="bg-white" d="M0,600 L960,500 L960,601 L0,601 L0,600")
+                    h4 Friday, March 6th
+                    .entry
+                        p.time 6:00 pm
+                        p.info Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    .entry
+                        p.time 8:30 pm
+                        p.info Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    .entry
+                        p.time 10:00 pm
+                        p.info Hacking begins
+                    .entry
+                        p.time 11:30 pm
+                        p.info Ut enim ad minim veniam.
+                    h4 Saturday, March 7th
+                    .entry
+                        p.time 6:00 pm
+                        p.info Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    .entry
+                        p.time 8:30 pm
+                        p.info Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    .entry
+                        p.time 10:00 pm
+                        p.info Hacking begins
+                    .entry
+                        p.time 11:30 pm
+                        p.info Ut enim ad minim veniam.
+                    h4 Sunday, March 8th
+                    .entry
+                        p.time 6:00 pm
+                        p.info Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    .entry
+                        p.time 8:30 pm
+                        p.info Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    .entry
+                        p.time 10:00 pm
+                        p.info Hacking begins
+                    .entry
+                        p.time 11:30 pm
+                        p.info Ut enim ad minim veniam.
+
+
+        .divider-image.divider4
+            canvas.slants(data-align="right" data-top="white" data-bottom="white")
+
         .panel.bg-white
             .container
                 .content.center
                     h1 Sponsors
+       
         .footer-padding
         .footer
             .container

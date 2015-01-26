@@ -68,43 +68,23 @@ $gray: #444444;
 .bg-blue {
     fill: $blue;
     background-color: $blue;
-
-    .bg-blue {
-        background-color: white;
-    }
 }
 .bg-pink {
     fill: $pink;
     background-color: $pink;
-
-    .bg-pink {
-        background-color: white;
-    }
 }
 .bg-white {
     fill: $white;
     background-color: $white;
-
-    .bg-white {
-        background-color: gray;
-    }
 }
 .bg-yellow {
     fill: $yellow;
     background-color: $yellow;
-
-    .bg-yellow {
-        background-color: white;
-    }
 }
 .bg-gray {
     fill: $gray;
     background-color: $gray;
     color: $white;
-
-    .bg-gray {
-        background-color: white;
-    }
 }
 
 
@@ -261,8 +241,47 @@ $gray: #444444;
             font-size: 2em;
             line-height: 2em;
         }
+        h4 {
+            font-size: 1.2em;
+            line-height: 2em;
+            margin-top: 0.5em;
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
         p {
             font-size: 1.2em;
+        }
+
+        &.schedule {
+            h4 {
+                margin-top: 1.5em;
+                &:first-of-type {
+                    margin-top: 0;
+                }
+                line-height: 1.2em;
+                // border-bottom: 3px solid black;
+            }
+
+            .entry {
+                width: 100%;
+                padding: 0.5em 0 0;
+                // border-bottom: 1px solid tint(black, 75%);
+
+                p {
+                    vertical-align: top;
+                }
+                .time {
+                    width: 25%;
+                    display: inline-block;
+                    font-weight: 300;
+                }
+                .info {
+                    width: 75%;
+                    display: inline-block;
+                    font-weight: 300;
+                }
+            }
         }
     }
 
@@ -346,52 +365,25 @@ $gray: #444444;
     position: relative;
     width: 100%;
     height: 60vh;
-    background-image: url('/images/divider-bg.jpg');
     background-size: auto 100%;
+    background-blend-mode: luminosity;
     @media screen and (min-width: 768px) {
         background-size: cover;
         background-attachment: fixed;
     }
     background-position: center;
-
-    .triangle-left-svg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-image: url('/images/triangle-left.svg');
-        background-size: 100% 100%;
+    
+    &.divider1 {
+        background: url('/images/divider-bg.jpg') tint($yellow, 50%);
     }
-    .triangle-blur {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
+    &.divider2 {
+        background: url('/images/divider-bg.jpg') tint($blue, 50%);
     }
-
-    .triangles {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        fill: white;
-
-        .shadow {
-            fill: black;
-            opacity: 0.5;
-        }
+    &.divider3 {
+        background: url('/images/divider-bg.jpg') tint($yellow, 50%);
     }
-    .bottom-triangle {
-        position: absolute;
-        bottom: 0;
-        right: -1%;
-        width: 102%;
-        fill: white;
-        -webkit-filter: drop-shadow( -5px -5px 5px #000 );
-                filter: drop-shadow( -5px -5px 5px #000 );
+    &.divider4 {
+        background: url('/images/divider-bg.jpg') tint($gray, 50%);
     }
 }
 

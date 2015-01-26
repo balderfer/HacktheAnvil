@@ -31,7 +31,8 @@ var spawnBubbles = function() {
 		if (spawn[i].nodeName != 'DIV') {
 			break;
 		}
-		var order = shuffle([0, 1, 2, 3, 4, 5]);
+		var topOrder = shuffle([0, 1, 2, 3, 4, 5]);
+		var colorOrder = shuffle([0, 1, 2, 3, 4, 5]);
 
 		for (var j = 0; j < 6; j++) {
 			var bubble = document.createElement('DIV');
@@ -53,17 +54,17 @@ var spawnBubbles = function() {
 			}
 
 			// Random background
-			random = Math.random();
-			if (random < 0.2) {
+			var colorN = colorOrder.pop();
+			if (colorN > 3) {
+				colorN -= 4;
+			}
+			if (colorN == 0) {
 				bubble.className += ' bg-blue';
 			}
-			else if (random < 0.4) {
+			else if (colorN == 1) {
 				bubble.className += ' bg-pink';
 			}
-			else if (random < 0.6) {
-				bubble.className += ' bg-white';
-			}
-			else if (random < 0.8) {
+			else if (colorN == 2) {
 				bubble.className += ' bg-yellow';
 			}
 			else {
@@ -92,7 +93,7 @@ var spawnBubbles = function() {
 			else {
 				k = 3
 			}
-			var top = (Math.random() * $(spawn[i]).height() / 6) + (order.pop() * $(spawn[i]).height() / 6) + 'px';
+			var top = (Math.random() * $(spawn[i]).height() / 6) + (topOrder.pop() * $(spawn[i]).height() / 6) + 'px';
 			top = parseInt(top, 10) + 100;
 			bubble.style.top = top + 'px';
 			console.log(top);
