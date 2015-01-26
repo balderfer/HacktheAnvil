@@ -278,7 +278,7 @@ body {
   .panel .spawn-bubbles {
     overflow: visible;
     z-index: 100; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
       .panel .spawn-bubbles {
         display: none; } }
     .panel .spawn-bubbles .bubble {

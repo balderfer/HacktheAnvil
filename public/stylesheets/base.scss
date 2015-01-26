@@ -397,7 +397,7 @@ $gray: #444444;
     .spawn-bubbles {
         overflow: visible;
         z-index: 100;
-        @media screen and (max-width: $break-xs) {
+        @media screen and (max-width: $break-sm) {
             display: none;
         }
         .bubble {
