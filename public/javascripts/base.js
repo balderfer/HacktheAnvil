@@ -89,10 +89,10 @@ var spawnBubbles = function() {
 
 			// Random right
 			if (spawn[i].dataset.align == 'right') {
-				bubble.style.right = (Math.random() * $(spawn[i]).width() / nBubbles) + (j * $(spawn[i]).width() / nBubbles) + 'px';
+				bubble.style.left = (Math.random() * $(spawn[i]).width() / nBubbles) + (j * $(spawn[i]).width() / nBubbles) + 'px';
 			}
 			else {
-				bubble.style.left = (Math.random() * $(spawn[i]).width() / nBubbles) + (j * $(spawn[i]).width() / nBubbles) + 'px';				
+				bubble.style.right = (Math.random() * $(spawn[i]).width() / nBubbles) + (j * $(spawn[i]).width() / nBubbles) + 'px';				
 			}
 
 			// Random top
