@@ -205,18 +205,30 @@ body {
         font-weight: 300; }
     .panel .content .gold img {
       height: 12em; }
+    @media screen and (max-width: 768px) {
+      .panel .content .gold {
+        display: block;
+        margin: 0 auto !important; } }
     .panel .content .silver {
       margin-bottom: 2em; }
       .panel .content .silver img {
         display: inline-block;
         height: 4em;
         margin-left: 2em; }
+        @media screen and (max-width: 768px) {
+          .panel .content .silver img {
+            display: block;
+            margin: 2em auto !important; } }
         .panel .content .silver img:first-child {
           margin-left: 0; }
     .panel .content .bronze img {
       display: inline-block;
       height: 3em;
       margin-left: 2em; }
+      @media screen and (max-width: 768px) {
+        .panel .content .bronze img {
+          display: block;
+          margin: 2em auto !important; } }
       .panel .content .bronze img:first-child {
         margin-left: 0; }
     .panel .content .partners-lg img {
@@ -230,6 +242,10 @@ body {
       margin-bottom: 2em; }
       .panel .content .partner:first-of-type {
         margin-left: 0; }
+      @media screen and (max-width: 768px) {
+        .panel .content .partner {
+          display: block;
+          margin: 1em auto !important; } }
       .panel .content .partner img {
         height: 5em;
         margin-left: 2em; }
@@ -262,6 +278,9 @@ body {
   .panel .spawn-bubbles {
     overflow: visible;
     z-index: 100; }
+    @media screen and (max-width: 480px) {
+      .panel .spawn-bubbles {
+        display: none; } }
     .panel .spawn-bubbles .bubble {
       position: absolute;
       border-radius: 1000px; }

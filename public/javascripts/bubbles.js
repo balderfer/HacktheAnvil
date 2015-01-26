@@ -58,7 +58,7 @@ var generateRadius = function() {
 var initBubbles = function() {
 	b = document.getElementById('bubbles');
 	b.width = document.getElementById('bubbleWrapper').offsetWidth;
-	b.height = document.getElementById('bubbleWrapper').offsetHeight;
+	b.height = window.innerHeight * 1.5;
 
 	bctx = b.getContext('2d');
 

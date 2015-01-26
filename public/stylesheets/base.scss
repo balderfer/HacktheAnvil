@@ -294,6 +294,11 @@ $gray: #444444;
             img {
                 height: 12em;
             }
+
+            @media screen and (max-width: $break-sm) {
+                display: block;
+                margin: 0 auto !important;
+            }
         }
         .silver {
             margin-bottom: 2em;
@@ -301,6 +306,12 @@ $gray: #444444;
                 display: inline-block;
                 height: 4em;
                 margin-left: 2em;
+
+                @media screen and (max-width: $break-sm) {
+                    display: block;
+                    margin: 2em auto !important;
+                }
+
                 &:first-child {
                     margin-left: 0;
                 }
@@ -311,6 +322,12 @@ $gray: #444444;
                 display: inline-block;
                 height: 3em;
                 margin-left: 2em;
+
+                @media screen and (max-width: $break-sm) {
+                    display: block;
+                    margin: 2em auto !important;
+                }
+
                 &:first-child {
                     margin-left: 0;
                 }
@@ -332,6 +349,12 @@ $gray: #444444;
             &:first-of-type {
                 margin-left: 0;
             }
+
+            @media screen and (max-width: $break-sm) {
+                display: block;
+                margin: 1em auto !important;
+            }
+
             img {
                 height: 5em;
                 margin-left: 2em;
@@ -374,6 +397,9 @@ $gray: #444444;
     .spawn-bubbles {
         overflow: visible;
         z-index: 100;
+        @media screen and (max-width: $break-xs) {
+            display: none;
+        }
         .bubble {
             position: absolute;
             border-radius: 1000px;
