@@ -31,22 +31,38 @@ var spawnBubbles = function() {
 		if (spawn[i].nodeName != 'DIV') {
 			break;
 		}
-		var topOrder = shuffle([0, 1, 2, 3, 4, 5]);
-		var colorOrder = shuffle([0, 1, 2, 3, 4, 5]);
+		var spawnHeight = $(spawn[i]).height();
+		var nBubbles = Math.round(spawnHeight / 120);
 
-		for (var j = 0; j < 6; j++) {
+		var topOrder = [];
+		var colorOrder = [];
+		var sizeOrder = [];
+		for (var l = 0; l < nBubbles; l++) {
+			topOrder.push(l);
+			colorOrder.push(l);			
+			sizeOrder.push(l);
+		}
+
+		topOrder = shuffle(topOrder);
+		colorOrder = shuffle(colorOrder);
+		sizeOrder = shuffle(sizeOrder);
+
+		for (var j = 0; j < nBubbles; j++) {
 			var bubble = document.createElement('DIV');
 			bubble.className = 'bubble';
 
 			// Random size
-			var random = Math.random();
-			if (j == 0 || j == 4) {
+			var sizeN = sizeOrder.pop();
+			while (sizeN > 3) {
+				sizeN -= 4;
+			}
+			if (sizeN == 0) {
 				bubble.className += ' bubble-xs';
 			}
-			else if (j == 3 || j == 5) {
+			else if (sizeN == 1) {
 				bubble.className += ' bubble-sm';
 			}
-			else if (j == 2) {
+			else if (sizeN == 2) {
 				bubble.className += ' bubble-md';
 			}
 			else {
@@ -55,7 +71,7 @@ var spawnBubbles = function() {
 
 			// Random background
 			var colorN = colorOrder.pop();
-			if (colorN > 3) {
+			while (colorN > 3) {
 				colorN -= 4;
 			}
 			if (colorN == 0) {
@@ -72,7 +88,12 @@ var spawnBubbles = function() {
 			}
 
 			// Random right
-			bubble.style.right = (Math.random() * $(spawn[i]).width() / 6) + (j * $(spawn[i]).width() / 6) + 'px';
+			if (bubble.dataset.align == 'right') {
+				bubble.style.right = (Math.random() * $(spawn[i]).width() / nBubbles) + (j * $(spawn[i]).width() / nBubbles) + 'px';
+			}
+			else {
+				bubble.style.left = (Math.random() * $(spawn[i]).width() / nBubbles) + (j * $(spawn[i]).width() / nBubbles) + 'px';				
+			}
 
 			// Random top
 			if (j == 0) {
@@ -93,10 +114,9 @@ var spawnBubbles = function() {
 			else {
 				k = 3
 			}
-			var top = (Math.random() * $(spawn[i]).height() / 6) + (topOrder.pop() * $(spawn[i]).height() / 6) + 'px';
+			var top = (Math.random() * $(spawn[i]).height() / nBubbles) + (topOrder.pop() * $(spawn[i]).height() / nBubbles) + 'px';
 			top = parseInt(top, 10) + 100;
 			bubble.style.top = top + 'px';
-			console.log(top);
 
 			var spawnTop = $(spawn[i]).offset().top;
 			var spawnBottom = $(spawn[i]).height() + spawnTop;
