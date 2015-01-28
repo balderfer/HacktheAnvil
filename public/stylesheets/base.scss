@@ -1,6 +1,6 @@
 @import "bourbon/bourbon";
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -14,8 +14,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
     margin: 0;
@@ -26,7 +26,7 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
@@ -90,16 +90,16 @@ $gray: #444444;
 
 .t-blue {
     color: $blue;
-} 
+}
 .t-pink {
     color: $pink;
-} 
+}
 .t-white {
     color: $white;
-} 
+}
 .t-yellow {
     color: $yellow;
-} 
+}
 .t-gray {
     color: $gray;
 }
@@ -180,7 +180,7 @@ $gray: #444444;
     position: relative;
     width: 100%;
     height: auto;
-    
+
     &.cover {
         height: 100vh;
         min-height: 32em;
@@ -458,22 +458,34 @@ $gray: #444444;
     background-blend-mode: luminosity;
     background-size: cover;
     background-position: center;
-    
+
     &.divider1 {
-        background: url('/images/divider-bg.jpg') tint($yellow, 50%);
+        background: url('/images/divider-bg1.jpg');
         background-size: cover;
+        background-position: 0 35%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
     &.divider2 {
-        background: url('/images/divider-bg.jpg') tint($blue, 50%);
+        background: url('/images/divider-bg2.jpg');
         background-size: cover;
+        background-position: 0 15%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
     &.divider3 {
-        background: url('/images/divider-bg.jpg') tint($yellow, 50%);
+        background: url('/images/divider-bg3.jpg');
         background-size: cover;
+        background-position: 0 75%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
     &.divider4 {
-        background: url('/images/divider-bg.jpg') tint($gray, 50%);
+        background: url('/images/divider-bg4.jpg');
         background-size: cover;
+        background-position: 0 28%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
 }
 
@@ -514,7 +526,7 @@ $gray: #444444;
         color: white;
         &:hover {
             background-color: shade($pink, 10%);
-            cursor: pointer; 
+            cursor: pointer;
         }
     }
     &-gray {
@@ -522,7 +534,7 @@ $gray: #444444;
         color: white;
         &:hover {
             background-color: shade($gray, 10%);
-            cursor: pointer; 
+            cursor: pointer;
         }
     }
 }

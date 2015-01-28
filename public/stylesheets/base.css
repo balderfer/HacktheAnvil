@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -323,17 +323,29 @@ body {
   background-size: cover;
   background-position: center; }
   .divider-image.divider1 {
-    background: url('/images/divider-bg.jpg') #fad6a0;
-    background-size: cover; }
+    background: url('/images/divider-bg1.jpg');
+    background-size: cover;
+    background-position: 0 35%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; }
   .divider-image.divider2 {
-    background: url('/images/divider-bg.jpg') #959ea7;
-    background-size: cover; }
+    background: url('/images/divider-bg2.jpg');
+    background-size: cover;
+    background-position: 0 15%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; }
   .divider-image.divider3 {
-    background: url('/images/divider-bg.jpg') #fad6a0;
-    background-size: cover; }
+    background: url('/images/divider-bg3.jpg');
+    background-size: cover;
+    background-position: 0 75%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; }
   .divider-image.divider4 {
-    background: url('/images/divider-bg.jpg') #a1a1a1;
-    background-size: cover; }
+    background: url('/images/divider-bg4.jpg');
+    background-size: cover;
+    background-position: 0 28%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; }
 
 .button-row {
   width: 100%;
