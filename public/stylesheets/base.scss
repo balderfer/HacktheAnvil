@@ -249,8 +249,8 @@ $gray: #444444;
         }
         h4 {
             font-size: 1.2em;
-            line-height: 2em;
-            margin-top: 0.5em;
+            line-height: 1em;
+            margin: 1.5em 0 0.5em;
             &:first-of-type {
                 margin-top: 0;
             }
@@ -291,6 +291,20 @@ $gray: #444444;
         }
 
         .gold {
+            a {
+                display: inline-block;
+                color: white;
+                font-size: 4em;
+                text-decoration: none;
+                margin-bottom: 0.5em;
+                padding: 0.25em 0.5em;
+                background-color: $yellow;
+                font-weight: 300;
+
+                &:hover {
+                    background-color: shade($yellow, 10%);
+                }
+            }
             img {
                 height: 12em;
             }
@@ -466,28 +480,36 @@ $gray: #444444;
         background-size: cover;
         background-position: 0 35%;
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        @media screen and (min-width: 768px) {
+            background-attachment: fixed;
+        }
     }
     &.divider2 {
         background: url('/images/divider-bg2.jpg');
         background-size: cover;
         background-position: 0 15%;
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        @media screen and (min-width: 768px) {
+            background-attachment: fixed;
+        }
     }
     &.divider3 {
         background: url('/images/divider-bg3.jpg');
         background-size: cover;
         background-position: 0 75%;
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        @media screen and (min-width: 768px) {
+            background-attachment: fixed;
+        }
     }
     &.divider4 {
         background: url('/images/divider-bg4.jpg');
         background-size: cover;
         background-position: 0 28%;
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        @media screen and (min-width: 768px) {
+            background-attachment: fixed;
+        }
     }
 }
 

@@ -62,7 +62,7 @@ body
                     p That's perfect! We're going to have specialized tracks set up throughout the event just for beginners. You'll get to work with experienced hackers and learn to make something awesome!
                     h4 What can I make?
                     p Web, desktop, mobile, hardware- it’s up to you to make whatever kind of project you want as long as it is software-related.
-                    h4 What's the prizes?
+                    h4 What are the prizes?
                     p We'll let you know soon :)
                     h4 Who can come?
                     p Any Purdue student is welcome to come, just make sure to register online before March 1st. Join your friends and create a team of up to four people!
@@ -129,7 +129,8 @@ body
                 .content.center
                     h1 Sponsors
                     .gold
-                        img(src="images/apple.jpg")
+                        a(href="http://apple.com") Apple
+                        //- img(src="images/apple.jpg")
                     .silver
                         img(src="images/cisco.png")
                         img(src="images/inin.png")
@@ -154,9 +155,8 @@ body
             .container
                 p Copyright © 2015 Hack the Anvil
                 .button-row
-                    i.social-button.fa.fa-envelope
-                    i.social-button.fa.fa-facebook
-                    i.social-button.fa.fa-twitter
+                    a(href="mailto:team@hacktheanvil.com") #[i.social-button.fa.fa-envelope]
+                    a(href="https://www.facebook.com/events/383200295194735/") #[i.social-button.fa.fa-facebook]
     script(src="javascripts/skrollr.js")
     script.
         spawnBubbles();

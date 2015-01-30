@@ -176,8 +176,8 @@ body {
       line-height: 2em; }
     .panel .content h4 {
       font-size: 1.2em;
-      line-height: 2em;
-      margin-top: 0.5em; }
+      line-height: 1em;
+      margin: 1.5em 0 0.5em; }
       .panel .content h4:first-of-type {
         margin-top: 0; }
     .panel .content p {
@@ -200,6 +200,17 @@ body {
         width: 75%;
         display: inline-block;
         font-weight: 300; }
+    .panel .content .gold a {
+      display: inline-block;
+      color: white;
+      font-size: 4em;
+      text-decoration: none;
+      margin-bottom: 0.5em;
+      padding: 0.25em 0.5em;
+      background-color: #f5ae42;
+      font-weight: 300; }
+      .panel .content .gold a:hover {
+        background-color: #dc9c3b; }
     .panel .content .gold img {
       height: 12em; }
     @media screen and (max-width: 768px) {
@@ -328,26 +339,34 @@ body {
     background: url('/images/divider-bg1.jpg');
     background-size: cover;
     background-position: 0 35%;
-    background-repeat: no-repeat;
-    background-attachment: fixed; }
+    background-repeat: no-repeat; }
+    @media screen and (min-width: 768px) {
+      .divider-image.divider1 {
+        background-attachment: fixed; } }
   .divider-image.divider2 {
     background: url('/images/divider-bg2.jpg');
     background-size: cover;
     background-position: 0 15%;
-    background-repeat: no-repeat;
-    background-attachment: fixed; }
+    background-repeat: no-repeat; }
+    @media screen and (min-width: 768px) {
+      .divider-image.divider2 {
+        background-attachment: fixed; } }
   .divider-image.divider3 {
     background: url('/images/divider-bg3.jpg');
     background-size: cover;
     background-position: 0 75%;
-    background-repeat: no-repeat;
-    background-attachment: fixed; }
+    background-repeat: no-repeat; }
+    @media screen and (min-width: 768px) {
+      .divider-image.divider3 {
+        background-attachment: fixed; } }
   .divider-image.divider4 {
     background: url('/images/divider-bg4.jpg');
     background-size: cover;
     background-position: 0 28%;
-    background-repeat: no-repeat;
-    background-attachment: fixed; }
+    background-repeat: no-repeat; }
+    @media screen and (min-width: 768px) {
+      .divider-image.divider4 {
+        background-attachment: fixed; } }
 
 .button-row {
   width: 100%;
