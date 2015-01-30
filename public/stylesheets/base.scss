@@ -457,6 +457,15 @@ $gray: #444444;
     height: 6em;
     bottom: 0;
 
+    .button-row {
+        a {
+            margin-left: 1em;
+            &:hover {
+                margin-left: 0;
+            }
+        }
+    }
+
     p {
         font-weight: 300;
         text-align: center;

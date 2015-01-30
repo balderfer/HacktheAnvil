@@ -320,6 +320,10 @@ body {
   width: 100%;
   height: 6em;
   bottom: 0; }
+  .footer .button-row a {
+    margin-left: 1em; }
+    .footer .button-row a:hover {
+      margin-left: 0; }
   .footer p {
     font-weight: 300;
     text-align: center;
