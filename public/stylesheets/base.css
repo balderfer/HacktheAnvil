@@ -181,7 +181,8 @@ body {
       .panel .content h4:first-of-type {
         margin-top: 0; }
     .panel .content p {
-      font-size: 1.2em; }
+      font-size: 1.2em;
+      line-height: 1.5em; }
     .panel .content.schedule h4 {
       margin-top: 1.5em;
       line-height: 1.2em; }
