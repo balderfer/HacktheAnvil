@@ -10,6 +10,16 @@ head
     script(src="javascripts/base.js")
     script(src="javascripts/bubbles.js")
 
+    script.
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-59158611-1', 'auto');
+        ga('send', 'pageview');
+
+
 body
     .body-wrapper#bubbleWrapper
         .bubbles#bubbleContainer
@@ -28,7 +38,7 @@ body
                     h2 Learn together. Create together.
                     p March 6-8 • Purdue University • 36 Hours
                     .button-row
-                        button.btn.btn-pink Sign up
+                        a(href="registration.html")#[button.btn.btn-pink Sign up]
 
         .divider-image#baseDividerImage.divider1(data-center="background-position: 0% 0%;" data-bottom-top="background-position: 0% -50%;" data-top-bottom="background-position: 0% 50%;")
             canvas.slants(data-align="left" data-top="white" data-bottom="white")
@@ -38,7 +48,7 @@ body
                 .spawn-bubbles.bubbles-left(data-align="left")
                 .content.right
                     h1 OUR MISSION
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, #[span.t-yellow sed do eiusmod tempor incididunt] ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    p Our team’s mission is to ignite a group of #[span.t-pink imaginative], #[span.t-blue ambitious], and #[span.t-yellow inspired] students at Purdue University. That’s why we are hosting the first-ever Hack the Anvil, a 36-hour, 400-Purdue-student hackathon where teams of Boilermakers craft hardware and software projects that solve important real-world problems. Hack the Anvil ties together the ever-growing hacker community at Purdue with top-tier companies to support the development of remarkable student projects and personal relationships.
         
         .divider-image.divider2(data-center="background-position: 0% 0%;" data-bottom-top="background-position: 0% -50%;" data-top-bottom="background-position: 0% 50%;")
             canvas.slants(data-align="right" data-top="white" data-bottom="white")
@@ -48,18 +58,16 @@ body
                 .spawn-bubbles.bubbles-right(data-align="right")
                 .content.left
                     h1 FAQ
-                    h4 Question for the FAQ goes here?
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    h4 Question for the FAQ goes here?
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    h4 Question for the FAQ goes here?
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    h4 Question for the FAQ goes here?
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    h4 Question for the FAQ goes here?
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    h4 Question for the FAQ goes here?
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    h4 What if I've never programmed before?
+                    p That's perfect! We're going to have specialized tracks set up throughout the event just for beginners. You'll get to work with experienced hackers and learn to make something awesome!
+                    h4 What can I make?
+                    p Web, desktop, mobile, hardware- it’s up to you to make whatever kind of project you want as long as it is software-related.
+                    h4 What's the prizes?
+                    p We'll let you know soon :)
+                    h4 Who can come?
+                    p Any Purdue student is welcome to come, just make sure to register online before March 1st. Join your friends and create a team of up to four people!
+                    h4 Have more questions?
+                    p Email us day or night at #[a.t-yellow(href="mailto:team@hacktheanvil.com") team@hacktheanvil.com]!
        
         .divider-image.divider3(data-center="background-position: 0% 0%;" data-bottom-top="background-position: 0% -50%;" data-top-bottom="background-position: 0% 50%;")
             canvas.slants(data-align="left" data-top="white" data-bottom="white")
@@ -71,43 +79,46 @@ body
                     h1 Schedule
                     h4 Friday, March 6th
                     .entry
-                        p.time 6:00 pm
-                        p.info Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        p.time 7:00 pm
+                        p.info Sponsor check-in begins.
                     .entry
-                        p.time 8:30 pm
-                        p.info Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        p.time 8:00 pm
+                        p.info Hacker check-in begins.
+                    .entry
+                        p.time 9:00 pm
+                        p.info Opening Ceremonies.
                     .entry
                         p.time 10:00 pm
-                        p.info Hacking begins
-                    .entry
-                        p.time 11:30 pm
-                        p.info Ut enim ad minim veniam.
+                        p.info Hacking begins!
                     h4 Saturday, March 7th
                     .entry
+                        p.time 2:00 am
+                        p.info Late night snack is served.
+                    .entry
+                        p.time 8:00 am
+                        p.info Breakfast is served.
+                    .entry
+                        p.time 12:00 pm
+                        p.info Lunch is served.
+                    .entry
                         p.time 6:00 pm
-                        p.info Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    .entry
-                        p.time 8:30 pm
-                        p.info Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    .entry
-                        p.time 10:00 pm
-                        p.info Hacking begins
-                    .entry
-                        p.time 11:30 pm
-                        p.info Ut enim ad minim veniam.
+                        p.info Dinner is served.
                     h4 Sunday, March 8th
                     .entry
-                        p.time 6:00 pm
-                        p.info Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        p.time 2:00 am
+                        p.info Late night snack is served.
                     .entry
-                        p.time 8:30 pm
-                        p.info Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        p.time 11:00 am
+                        p.info Hacking ends. Lunch is served.
                     .entry
-                        p.time 10:00 pm
-                        p.info Hacking begins
+                        p.time 12:00 pm
+                        p.info Expo begins.
                     .entry
-                        p.time 11:30 pm
-                        p.info Ut enim ad minim veniam.
+                        p.time 2:00 pm
+                        p.info Expo ends.
+                    .entry
+                        p.time 2:15 pm
+                        p.info Closing Ceremonies.
 
 
         .divider-image.divider4(data-center="background-position: 0% 0%;" data-bottom-top="background-position: 0% -50%;" data-top-bottom="background-position: 0% 50%;")
@@ -123,7 +134,6 @@ body
                         img(src="images/cisco.png")
                         img(src="images/inin.png")
                     .bronze
-                        img(src="images/twilio.png")
 
                     .break-sm
                     h1 Partners
@@ -137,7 +147,7 @@ body
                     .partner
                         img.smaller(src="images/aitp.png")
                     .partner
-                        img.smaller(src="images/psg.png")
+                        img.smaller(src="images/twilio.png")
        
         .footer-padding
         .footer
