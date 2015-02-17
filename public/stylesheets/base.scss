@@ -293,21 +293,23 @@ $gray: #444444;
 
         .gold {
             a {
-                display: inline-block;
-                color: white;
-                font-size: 4em;
-                text-decoration: none;
-                margin-bottom: 0.5em;
-                padding: 0.25em 0.5em;
-                background-color: $yellow;
-                font-weight: 300;
-
-                &:hover {
-                    background-color: shade($yellow, 10%);
+                // display: inline-block;
+                // color: white;
+                // font-size: 4em;
+                // text-decoration: none;
+                // margin-bottom: 0.5em;
+                // padding: 0.25em 0.5em;
+                // background-color: $yellow;
+                // font-weight: 300;
+                //
+                // &:hover {
+                //     background-color: shade($yellow, 10%);
+                // }
+                img {
+                  // height: 10em;
+                  margin-bottom: 2em;
+                  margin-top: 0.25em;
                 }
-            }
-            img {
-                height: 12em;
             }
 
             @media screen and (max-width: $break-sm) {
@@ -319,7 +321,7 @@ $gray: #444444;
             margin-bottom: 2em;
             img {
                 display: inline-block;
-                height: 4em;
+                height: 4.25em;
                 margin-left: 2em;
 
                 @media screen and (max-width: $break-sm) {
@@ -335,7 +337,7 @@ $gray: #444444;
         .bronze {
             img {
                 display: inline-block;
-                height: 3em;
+                height: 3.5em;
                 margin-left: 2em;
 
                 @media screen and (max-width: $break-sm) {

@@ -204,19 +204,9 @@ body {
         width: 75%;
         display: inline-block;
         font-weight: 300; }
-    .panel .content .gold a {
-      display: inline-block;
-      color: white;
-      font-size: 4em;
-      text-decoration: none;
-      margin-bottom: 0.5em;
-      padding: 0.25em 0.5em;
-      background-color: #f5ae42;
-      font-weight: 300; }
-      .panel .content .gold a:hover {
-        background-color: #dc9c3b; }
-    .panel .content .gold img {
-      height: 12em; }
+    .panel .content .gold a img {
+      margin-bottom: 2em;
+      margin-top: 0.25em; }
     @media screen and (max-width: 768px) {
       .panel .content .gold {
         display: block;
@@ -225,7 +215,7 @@ body {
       margin-bottom: 2em; }
       .panel .content .silver img {
         display: inline-block;
-        height: 4em;
+        height: 4.25em;
         margin-left: 2em; }
         @media screen and (max-width: 768px) {
           .panel .content .silver img {
@@ -235,7 +225,7 @@ body {
           margin-left: 0; }
     .panel .content .bronze img {
       display: inline-block;
-      height: 3em;
+      height: 3.5em;
       margin-left: 2em; }
       @media screen and (max-width: 768px) {
         .panel .content .bronze img {
