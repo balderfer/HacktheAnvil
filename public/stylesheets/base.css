@@ -84,6 +84,9 @@ body {
     left: 0;
     z-index: 100;
     pointer-events: none; }
+    @media screen and (max-width: 480px) {
+      .body-wrapper > .bubbles {
+        display: none; } }
     .body-wrapper > .bubbles canvas {
       width: 100%;
       height: 100%; }
@@ -181,7 +184,8 @@ body {
       .panel .content h4:first-of-type {
         margin-top: 0; }
     .panel .content p {
-      font-size: 1.2em; }
+      font-size: 1.2em;
+      line-height: 1.5em; }
     .panel .content.schedule h4 {
       margin-top: 1.5em;
       line-height: 1.2em; }
@@ -200,28 +204,18 @@ body {
         width: 75%;
         display: inline-block;
         font-weight: 300; }
-    .panel .content .gold a {
-      display: inline-block;
-      color: white;
-      font-size: 4em;
-      text-decoration: none;
-      margin-bottom: 0.5em;
-      padding: 0.25em 0.5em;
-      background-color: #f5ae42;
-      font-weight: 300; }
-      .panel .content .gold a:hover {
-        background-color: #dc9c3b; }
-    .panel .content .gold img {
-      height: 12em; }
+    .panel .content .gold a img {
+      margin-bottom: 2em;
+      margin-top: 0.25em; }
     @media screen and (max-width: 768px) {
       .panel .content .gold {
         display: block;
         margin: 0 auto !important; } }
     .panel .content .silver {
-      margin-bottom: 2em; }
+      margin-bottom: 3em; }
       .panel .content .silver img {
         display: inline-block;
-        height: 4em;
+        height: 4.25em;
         margin-left: 2em; }
         @media screen and (max-width: 768px) {
           .panel .content .silver img {
@@ -231,7 +225,7 @@ body {
           margin-left: 0; }
     .panel .content .bronze img {
       display: inline-block;
-      height: 3em;
+      height: 3.5em;
       margin-left: 2em; }
       @media screen and (max-width: 768px) {
         .panel .content .bronze img {
@@ -320,10 +314,6 @@ body {
   width: 100%;
   height: 6em;
   bottom: 0; }
-  .footer .button-row a {
-    margin-left: 1em; }
-    .footer .button-row a:hover {
-      margin-left: 0; }
   .footer p {
     font-weight: 300;
     text-align: center;
@@ -375,13 +365,14 @@ body {
 .button-row {
   width: 100%;
   text-align: center; }
+  .button-row a {
+    margin-left: 1em; }
+    .button-row a:first-child {
+      margin-left: 0; }
   .button-row .social-button {
     font-size: 1.4em;
-    margin-left: 1.2em;
     color: #a1a1a1;
     transition: all 0.25s; }
-    .button-row .social-button:first-child {
-      margin-left: 0; }
     .button-row .social-button:hover {
       cursor: pointer;
       color: #444444; }
