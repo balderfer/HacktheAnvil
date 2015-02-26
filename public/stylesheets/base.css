@@ -205,17 +205,17 @@ body {
         display: inline-block;
         font-weight: 300; }
     .panel .content .gold a img {
-      margin-bottom: 2em;
-      margin-top: 0.25em; }
+      margin-bottom: 2.3em;
+      margin-top: 0.75em; }
     @media screen and (max-width: 768px) {
       .panel .content .gold {
         display: block;
         margin: 0 auto !important; } }
     .panel .content .silver {
-      margin-bottom: 3em; }
+      margin-bottom: 3.5em; }
       .panel .content .silver img {
         display: inline-block;
-        height: 4.25em;
+        height: 3.8em;
         margin-left: 2em; }
         @media screen and (max-width: 768px) {
           .panel .content .silver img {
@@ -225,7 +225,7 @@ body {
           margin-left: 0; }
     .panel .content .bronze img {
       display: inline-block;
-      height: 3.5em;
+      height: 3em;
       margin-left: 2em; }
       @media screen and (max-width: 768px) {
         .panel .content .bronze img {

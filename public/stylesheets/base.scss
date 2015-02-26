@@ -307,8 +307,8 @@ $gray: #444444;
                 // }
                 img {
                   // height: 10em;
-                  margin-bottom: 2em;
-                  margin-top: 0.25em;
+                  margin-bottom: 2.3em;
+                  margin-top: 0.75em;
                 }
             }
 
@@ -318,10 +318,10 @@ $gray: #444444;
             }
         }
         .silver {
-            margin-bottom: 3em;
+            margin-bottom: 3.5em;
             img {
                 display: inline-block;
-                height: 4.25em;
+                height: 3.8em;
                 margin-left: 2em;
 
                 @media screen and (max-width: $break-sm) {
@@ -337,7 +337,7 @@ $gray: #444444;
         .bronze {
             img {
                 display: inline-block;
-                height: 3.5em;
+                height: 3em;
                 margin-left: 2em;
 
                 @media screen and (max-width: $break-sm) {
