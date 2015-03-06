@@ -151,7 +151,7 @@ body {
       line-height: 1em; }
     .panel .hero p {
       text-align: center;
-      font-size: 1.4em;
+      font-size: 1.3em;
       margin-bottom: 1.4em; }
     .panel .hero .btn {
       width: 8em; }
@@ -330,7 +330,6 @@ body {
   background-size: cover;
   background-position: center; }
   .divider-image.divider1 {
-    background: url('/images/divider-bg1.jpg');
     background-size: cover;
     background-position: 0 35%;
     background-repeat: no-repeat; }

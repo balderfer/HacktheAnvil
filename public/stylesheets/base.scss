@@ -209,7 +209,7 @@ $gray: #444444;
         }
         p {
             text-align: center;
-            font-size: 1.4em;
+            font-size: 1.3em;
             margin-bottom: 1.4em;
         }
         .btn {
@@ -479,7 +479,7 @@ $gray: #444444;
     background-position: center;
 
     &.divider1 {
-        background: url('/images/divider-bg1.jpg');
+        // background: url('/images/divider-bg1.jpg');
         background-size: cover;
         background-position: 0 35%;
         background-repeat: no-repeat;

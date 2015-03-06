@@ -36,12 +36,16 @@ body
                 .hero
                     h1 Hack the Anvil
                     h2 Learn together. Create together.
-                    p March 6-8 • Purdue University • 36 Hours
+                    p March 6-8 • 320 North St, West Lafayette, IN • 36 Hours
+                    //- p March 6-8 • Purdue University • 36 Hours
                     .button-row
                         a(href="registration.html")#[button.btn.btn-pink Sign up]
 
-        .divider-image#baseDividerImage.divider1(data-center="background-position: 0% 0%;" data-bottom-top="background-position: 0% -50%;" data-top-bottom="background-position: 0% 50%;")
-            canvas.slants(data-align="left" data-top="white" data-bottom="white")
+        .divider-image#map.divider1
+            //- canvas.slants(data-align="left" data-top="white" data-bottom="white")
+        //- (data-center="background-position: 0% 0%;" data-bottom-top="background-position: 0% -50%;" data-top-bottom="background-position: 0% 50%;")
+        //- #map.divider1(style="width:100%; ")
+            
 
         .panel.bg-white
             .container
@@ -50,7 +54,7 @@ body
                     h1 OUR MISSION
                     p Our team’s mission is to ignite a group of #[span.t-pink imaginative], #[span.t-blue ambitious], and #[span.t-yellow inspired] students at Purdue University. That’s why we are hosting the first-ever Hack the Anvil, a 36-hour, 400-Purdue-student hackathon where teams of Boilermakers craft hardware and software projects that solve important real-world problems. Hack the Anvil ties together the ever-growing hacker community at Purdue with top-tier companies to support the development of remarkable student projects and personal relationships.
 
-        .divider-image.divider2(data-center="background-position: 0% 0%;" data-bottom-top="background-position: 0% -50%;" data-top-bottom="background-position: 0% 50%;")
+        .divider-image#baseDividerImage.divider2(data-center="background-position: 0% 0%;" data-bottom-top="background-position: 0% -50%;" data-top-bottom="background-position: 0% 50%;")
             canvas.slants(data-align="right" data-top="white" data-bottom="white")
 
         .panel.bg-white
@@ -160,7 +164,35 @@ body
                 .button-row
                     a(href="mailto:team@hacktheanvil.com") #[i.social-button.fa.fa-envelope]
                     a(href="https://www.facebook.com/events/383200295194735/") #[i.social-button.fa.fa-facebook]
+    script(src="https://maps.googleapis.com/maps/api/js")
     script(src="javascripts/skrollr.js")
+    script.
+        function initialize() {
+            console.log("test");
+            var mapCanvas = document.getElementById('map');
+            var myLocation = new google.maps.LatLng(40.4261782, -86.9100484);
+            var mapOptions = {
+                  center: myLocation,
+                  zoom: 18,
+                  scrollwheel: false,
+                  navigationControl: false,
+                  mapTypeControl: false,
+                  scaleControl: false,
+                  draggable: false,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+            var marker = new google.maps.Marker({
+                position: myLocation,
+                map: map,
+                title: 'The Anvil'
+            });
+            var iw = new google.maps.InfoWindow({
+                content: "The Anvil"
+            });
+            google.maps.event.addListener(marker, "click", function (e) { iw.open(map, marker); });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
     script.
         spawnBubbles();
         initBubbles();
