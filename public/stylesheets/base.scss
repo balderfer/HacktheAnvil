@@ -213,7 +213,8 @@ $gray: #444444;
             margin-bottom: 1.4em;
         }
         .btn {
-            width: 8em;
+            width: 11em;
+            cursor: not-allowed !important;
         }
     }
 
@@ -479,7 +480,7 @@ $gray: #444444;
     background-position: center;
 
     &.divider1 {
-        // background: url('/images/divider-bg1.jpg');
+        background: url('/images/divider-bg1.jpg');
         background-size: cover;
         background-position: 0 35%;
         background-repeat: no-repeat;

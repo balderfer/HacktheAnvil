@@ -154,7 +154,8 @@ body {
       font-size: 1.3em;
       margin-bottom: 1.4em; }
     .panel .hero .btn {
-      width: 8em; }
+      width: 11em;
+      cursor: not-allowed !important; }
   .panel .content {
     padding: 4em 0; }
     .panel .content.left {
@@ -330,6 +331,7 @@ body {
   background-size: cover;
   background-position: center; }
   .divider-image.divider1 {
+    background: url('/images/divider-bg1.jpg');
     background-size: cover;
     background-position: 0 35%;
     background-repeat: no-repeat; }
